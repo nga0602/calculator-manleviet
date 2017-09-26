@@ -128,11 +128,18 @@ namespace caculator
       {
           lbldisplay.Text = ((double.Parse(lbldisplay.Text) / 100)).ToString();
       }
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if(lbldisplay.Text.Length >1)
-                lbldisplay.Text = lbldisplay.Text.Remove(lbldisplay.Text.Length - 1, 1);
-        }
+      private void btnXoa_Click(object sender, EventArgs e)
+      {
+          {
+              if (lbldisplay.Text.Length > 0)
+                  lbldisplay.Text = lbldisplay.Text.Remove(lbldisplay.Text.Length - 1, 1);
+              if (lbldisplay.Text == "")
+              {
+                  lbldisplay.Text = "0";
+              }
+          }
+      }
+
         private void btnNho_Click(object sender, EventArgs e)
         {
             nho = 0;
