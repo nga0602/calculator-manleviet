@@ -17,7 +17,7 @@ namespace caculator
             InitializeComponent();
         }
         bool istypingNumber= false;
-        enum PhepToan { cong, tru, nhan, chia}
+        enum PhepToan {NONE, cong, tru, nhan, chia}
         PhepToan pheptoan;
         double nho;
          
@@ -39,6 +39,7 @@ namespace caculator
         }
       private void NhapPhepToan(object sender, EventArgs e)
       {
+          if (nho != 0)
           TinhKetQua();
           Button btn = (Button)sender;
          switch (btn.Text)
@@ -71,6 +72,8 @@ namespace caculator
       {
           TinhKetQua();
           istypingNumber = false;
+          nho = 0;
+          pheptoan = PhepToan.NONE; 
 
       }
 
@@ -90,6 +93,7 @@ namespace caculator
               case '9':
                   Nhapso("" + e.KeyChar);
                   break;
+
               case '+':
                   btncong.PerformClick();
                   break;
@@ -132,7 +136,7 @@ namespace caculator
         private void btnNho_Click(object sender, EventArgs e)
         {
             nho = 0;
-            lbldisplay.ResetText();
+            lbldisplay.Text = "0";
         }
       }
     }
