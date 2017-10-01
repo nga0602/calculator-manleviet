@@ -271,6 +271,7 @@
             this.btnthapphan.TabIndex = 19;
             this.btnthapphan.Text = ".";
             this.btnthapphan.UseVisualStyleBackColor = true;
+            this.btnthapphan.Click += new System.EventHandler(this.btnThapPhan_Click);
             // 
             // btnnho
             // 
